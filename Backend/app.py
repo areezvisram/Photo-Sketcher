@@ -7,14 +7,21 @@ from background_noise import BackgroundNoise
 from outline import Outline
 import cv2
 import numpy
+import requests
+import cloudinary
+from cloudinary import uploader
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
 def home():
     return "Home Page"
 
 @app.route('/addPhoto', methods=['POST'])
+@cross_origin()
 def addPhoto():
     url = request.json.get('url')
     url_img = Url_Img(url).url_convert()
@@ -35,7 +42,10 @@ def addPhoto():
     white = numpy.all(drawingColor == [255, 255, 255, 255], axis=-1)
     drawingColor[white, -1] = 0
     final = Image.fromarray(drawingColor)
-    final.show()
+    cv2.imwrite("cloudinary.png", drawingColor)
+    
+    cloudinary_url = cloudinary.uploader.unsigned_upload("cloudinary.png", "ml_default", cloud_name="dmlnk1kus")['url']
+    print(cloudinary_url)
 
-    response = {'status': 1}
+    response = {'status': 1, 'sketch_url': cloudinary_url }
     return jsonify(response)
