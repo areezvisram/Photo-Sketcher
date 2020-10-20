@@ -42,9 +42,9 @@ def addPhoto():
     white = numpy.all(drawingColor == [255, 255, 255, 255], axis=-1)
     drawingColor[white, -1] = 0
     final = Image.fromarray(drawingColor)
-    cv2.imwrite("cloudinary.png", drawingColor)
+    cv2.imwrite("cloudinary1.png", drawingColor)
     
-    cloudinary_url = cloudinary.uploader.unsigned_upload("cloudinary.png", "ml_default", cloud_name="dmlnk1kus")['url']
+    cloudinary_url = cloudinary.uploader.unsigned_upload("cloudinary1.png", "ml_default", cloud_name="dmlnk1kus")['url']
     print(cloudinary_url)
 
     response = {'status': 1, 'sketch_url': cloudinary_url }
