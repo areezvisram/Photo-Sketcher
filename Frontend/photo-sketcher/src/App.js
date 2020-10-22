@@ -37,7 +37,7 @@ class App extends React.Component {
         },
         body: JSON.stringify(data)
     };
-      return fetch('http://127.0.0.1:5000/addPhoto', obj)
+      return fetch('https://av-photo-sketcher.herokuapp.com/addPhoto', obj)
       .then(response => response.json())
       .then(response => {
         this.setState({

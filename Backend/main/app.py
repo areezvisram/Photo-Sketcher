@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
-from url_img import Url_Img
-from url_image import Url_Image
+from main.url_img import Url_Img
+from main.url_image import Url_Image
 from PIL import Image
-from drawing import Drawing
-from background_noise import BackgroundNoise
-from outline import Outline
+from main.drawing import Drawing
+from main.background_noise import BackgroundNoise
+from main.outline import Outline
 import cv2
 import numpy
 import requests
