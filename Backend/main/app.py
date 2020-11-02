@@ -45,7 +45,9 @@ def addPhoto():
     cv2.imwrite("cloudinary1.png", drawingColor)
     
     cloudinary_url = cloudinary.uploader.unsigned_upload("cloudinary1.png", "ml_default", cloud_name="dmlnk1kus")['url']
-    print(cloudinary_url)
+    cloudinary_download = cloudinary_url.split("/upload")
+    download_link = cloudinary_download[0] + "/upload/fl_attachment:sketch1" + cloudinary_download[1]
+    print(download_link)
 
-    response = {'status': 1, 'sketch_url': cloudinary_url }
+    response = {'status': 1, 'sketch_url': cloudinary_url, 'download_url': download_link }
     return jsonify(response)
