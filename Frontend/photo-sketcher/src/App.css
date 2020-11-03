@@ -2,7 +2,7 @@ html, body {
   max-width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  overflow-y: hidden;
+  background-color: #101357;
 }
 
 .App {
@@ -21,9 +21,6 @@ html, body {
   border-right: .5px solid grey;
 }
 
-.App .bottom {
-  border-left: .5px solid grey;
-}
 
 .App .top,
 .App .bottom {
@@ -75,7 +72,7 @@ html, body {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid grey;
+    border-top: 1px solid white;
     padding: 0;
     width: 40%;
     margin: auto;
@@ -90,6 +87,7 @@ html, body {
 
 .App .bottom p {
   margin-top: 40px;
+  color: #FFFFFF;
 }
 
 .sketch-1{
@@ -100,7 +98,8 @@ html, body {
   height: auto;
   float: left;
   margin-left: 5%;
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  border: 1px solid white;
 }
 
 .sketch-2{
@@ -111,7 +110,8 @@ html, body {
   height: auto;
   float: right;
   margin-right: 5%;
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  border: 1px solid white;
 }
 
 .item {
@@ -122,6 +122,7 @@ html, body {
   margin-right: 10px;
   margin-bottom: 1px;
   float:left;
+  
 }
 
 .item2 {
@@ -140,4 +141,11 @@ html, body {
   border: 1px solid #800080;
   color: #FFFFFF;
   height: 30px;
+}
+
+.download-link {
+  color: #FFFFFF;
+  font-size: 1.5em;
+  padding-top: 10px;
+  position: relative;
 }

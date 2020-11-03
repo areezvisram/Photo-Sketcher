@@ -28,7 +28,8 @@ def addPhoto():
     url_image = Url_Image(url).url_convert2()
 
     drawing = Drawing(url_img).drawing()
-    
+    cv2.imwrite("cloudinary2.png", drawing)
+
     background = BackgroundNoise(url_image.size, levels=6).background_noise()
 
     outline = Outline(url_img).outline()
@@ -43,11 +44,15 @@ def addPhoto():
     drawingColor[white, -1] = 0
     final = Image.fromarray(drawingColor)
     cv2.imwrite("cloudinary1.png", drawingColor)
-    
+
+       
     cloudinary_url = cloudinary.uploader.unsigned_upload("cloudinary1.png", "ml_default", cloud_name="dmlnk1kus")['url']
     cloudinary_download = cloudinary_url.split("/upload")
     download_link = cloudinary_download[0] + "/upload/fl_attachment:sketch1" + cloudinary_download[1]
-    print(download_link)
+    
+    cloudinary_url2 = cloudinary.uploader.unsigned_upload("cloudinary2.png", "ml_default", cloud_name="dmlnk1kus")['url']
+    cloudinary_download2 = cloudinary_url2.split("/upload")
+    download_link2 = cloudinary_download2[0] + "/upload/fl_attachment:sketch2" + cloudinary_download[1]
 
-    response = {'status': 1, 'sketch_url': cloudinary_url, 'download_url': download_link }
+    response = {'status': 1, 'sketch_url': cloudinary_url, 'download_url': download_link, 'sketch2_url': cloudinary_url2, 'download_url2': download_link2 }
     return jsonify(response)

@@ -5,7 +5,10 @@ class App extends React.Component {
   state = {
     imageUrl: null,
     imageAlt: null,
-    imageDownload: null
+    imageDownload: null,
+    imageUrl2: null,
+    imageAlt2: null,
+    imageDownload2: null
   }
 
 
@@ -40,11 +43,11 @@ class App extends React.Component {
         this.setState({
           imageUrl: response.sketch_url,
           imageAlt: `A sketch of ${res.original_filename}`,
-          imageDownload: response.download_url
+          imageDownload: response.download_url,
+          imageUrl2: response.sketch2_url,
+          imageAlt2: `A sketch of ${res.original_filename}`,
+          imageDownload2: response.download_url2
         })
-        // console.log(response.download_link)
-        // var download = document.getElementById("download");
-        // download.href = response.download_link
       })
 
     })
@@ -69,7 +72,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { imageUrl, imageAlt, imageDownload } = this.state;
+    const { imageUrl, imageAlt, imageDownload, imageUrl2, imageAlt2, imageDownload2 } = this.state;
 
     return (
       <main className="App">
@@ -87,10 +90,26 @@ class App extends React.Component {
           <hr/>
           <p>The sketches will be displayed here:</p>
 
-          <div className="item">
+          {/* <div className="item">
             <img src={imageUrl} alt={imageAlt} className="sketch-1"/>
             <a href={imageDownload}>Download</a>
-          </div>        
+          </div> */}
+
+          
+          {/* <div className="item2">
+            <img src={imageUrl2} alt={imageAlt2} className="sketch-2"/>
+            <a href={imageDownload2}>Download</a>
+          </div>           */}
+
+          <div className="item">
+            <img src="https://res.cloudinary.com/dmlnk1kus/image/upload/v1604429010/cloudinary2_pumci8.png" alt={imageAlt} className="sketch-1"/>
+            <a href={imageDownload} className="download-link">Download</a>
+          </div>
+
+          <div className="item2">
+            <img src="https://res.cloudinary.com/dmlnk1kus/image/upload/v1604429010/cloudinary2_pumci8.png" alt={imageAlt2} className="sketch-2"/>
+            <a href={imageDownload2} className="download-link">Download</a>
+          </div> 
           
         </section>
       </main>
