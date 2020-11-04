@@ -2,7 +2,8 @@ html, body {
   max-width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #101357;
+  background-color: #ffffff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .App {
@@ -11,6 +12,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .App .top {
@@ -35,11 +37,14 @@ html, body {
   border-radius: 4px;
   width: 300px;
   padding: 40px 10px;
+  
 }
 
 .App .top form input {
   margin: 0 0 30px;
   width: 200px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 0.95em;
 }
 
 .App .top form .btn {
@@ -49,6 +54,8 @@ html, body {
   border: 1px solid grey;
   cursor: pointer;
   border-radius: 4px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 0.95em;
 }
 
 .App .top form .btn:hover {
@@ -63,8 +70,8 @@ html, body {
 
 .App .top form .btn.widget-btn {
   margin-top: 15px;
-  background: #800080;
-  border: 1px solid #800080;
+  background: #232ABE;
+  border: 1px solid #232ABE;
   color: #FFFFFF;
 }
 
@@ -72,7 +79,7 @@ html, body {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid white;
+    border-top: 1px solid #101357;
     padding: 0;
     width: 40%;
     margin: auto;
@@ -82,12 +89,13 @@ html, body {
 
 .App .top form .btn.widget-btn:hover {
   margin-top: 15px;
-  background: #4B0082;
+  background: #101357;
 }
 
 .App .bottom p {
-  margin-top: 40px;
-  color: #FFFFFF;
+  margin-top: 30px;
+  color: #101357;
+  font-size: 1.1em;
 }
 
 .sketch-1{
@@ -99,7 +107,7 @@ html, body {
   float: left;
   margin-left: 5%;
   /* margin-top: 10px; */
-  border: 1px solid white;
+  border: 1px solid #101357;
 }
 
 .sketch-2{
@@ -111,7 +119,7 @@ html, body {
   float: right;
   margin-right: 5%;
   /* margin-top: 10px; */
-  border: 1px solid white;
+  border: 1px solid #101357;
 }
 
 .item {
@@ -135,17 +143,19 @@ html, body {
   float:right;
 }
 
-.download-btn {
-  margin-top: 15px;
-  background: #800080;
-  border: 1px solid #800080;
+.download-link {
+  text-decoration: none;
+  background-color: #232ABE;
+  border: 1px solid #232ABE;
   color: #FFFFFF;
-  height: 30px;
+  font-size: 1.2em;
+  margin-top: 10px;
+  padding: 7px;
+  cursor: pointer;
+  position: relative;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.download-link {
-  color: #FFFFFF;
-  font-size: 1.5em;
-  padding-top: 10px;
-  position: relative;
+.download-link:hover {
+    background: #101357;
 }

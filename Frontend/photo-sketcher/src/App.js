@@ -52,8 +52,17 @@ class App extends React.Component {
 
     })
     .catch(err => console.log(err));
-
     
+  }
+
+  download = () => {
+    //window.location.href = this.state.imageDownload
+    window.location.href = "https://res.cloudinary.com/dmlnk1kus/image/upload/fl_attachment:sketch2/v1604429010/cloudinary2_pumci8.png"
+  }
+
+  download2 = () => {
+    //window.location.href = this.state.imageDownload2
+    window.location.href = "https://res.cloudinary.com/dmlnk1kus/image/upload/fl_attachment:sketch2/v1604429010/cloudinary2_pumci8.png"
   }
 
   openWidget = () => {
@@ -103,12 +112,14 @@ class App extends React.Component {
 
           <div className="item">
             <img src="https://res.cloudinary.com/dmlnk1kus/image/upload/v1604429010/cloudinary2_pumci8.png" alt={imageAlt} className="sketch-1"/>
-            <a href={imageDownload} className="download-link">Download</a>
+            {/* <a href={imageDownload} className="download-link">Download</a> */}
+            <button onClick={this.download} className="download-link"><i class="fa fa-download"/>  Download</button>
           </div>
 
           <div className="item2">
             <img src="https://res.cloudinary.com/dmlnk1kus/image/upload/v1604429010/cloudinary2_pumci8.png" alt={imageAlt2} className="sketch-2"/>
-            <a href={imageDownload2} className="download-link">Download</a>
+            {/* <a href={imageDownload2} className="download-link">Download</a> */}
+            <button onClick={this.download2} className="download-link"><i class="fa fa-download"/>  Download</button>
           </div> 
           
         </section>
