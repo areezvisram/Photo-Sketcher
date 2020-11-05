@@ -1,0 +1,29 @@
+.header {
+    margin-right: 89%;
+    margin-bottom: -150px;
+    z-index: 1000;
+  }
+
+  .logo {
+    border: 0;
+  }
+
+  .github {
+      height: 50px;
+      width: 50px;
+      float: left;
+      margin-left: 25px;
+      z-index: 1000;
+  }
+
+  .linkedin {
+      height: 50px;
+      width: 50px;
+      float: right;
+      margin-right: 25px;
+      z-index: 1000;
+  }
+
+  .social-div {
+    margin-top: -5px;
+  }

@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css'
+import Header from './components/Header'
 
 class App extends React.Component {
   state = {
@@ -13,6 +14,11 @@ class App extends React.Component {
 
 
   handleImageUpload = () => {
+    
+    let donwload_btns = document.getElementsByClassName("download-link");
+    for(var i = 0; i < donwload_btns.length; i++) {
+      donwload_btns[i].style.display = "initial";
+    }
     const { files } = document.querySelector('input[type="file"]');
     console.log(files[0])
     const formData = new FormData();
@@ -52,17 +58,15 @@ class App extends React.Component {
 
     })
     .catch(err => console.log(err));
-    
+
   }
 
   download = () => {
-    //window.location.href = this.state.imageDownload
-    window.location.href = "https://res.cloudinary.com/dmlnk1kus/image/upload/fl_attachment:sketch2/v1604429010/cloudinary2_pumci8.png"
+    window.location.href = this.state.imageDownload
   }
 
   download2 = () => {
-    //window.location.href = this.state.imageDownload2
-    window.location.href = "https://res.cloudinary.com/dmlnk1kus/image/upload/fl_attachment:sketch2/v1604429010/cloudinary2_pumci8.png"
+    window.location.href = this.state.imageDownload2
   }
 
   openWidget = () => {
@@ -81,11 +85,15 @@ class App extends React.Component {
   };
 
   render() {
-    const { imageUrl, imageAlt, imageDownload, imageUrl2, imageAlt2, imageDownload2 } = this.state;
+    const { imageUrl, imageAlt, imageUrl2, imageAlt2 } = this.state;
 
     return (
       <main className="App">
-        <section className="top">
+        {/* <a href="http://www.areezvisram.com" className="logo">
+          <img src={logo} alt=""></img>
+        </a>  */}
+        <Header />
+        <section className="top">        
           <form>
             <div className="form-group">
               <input type="file"/>
@@ -99,29 +107,16 @@ class App extends React.Component {
           <hr/>
           <p>The sketches will be displayed here:</p>
 
-          {/* <div className="item">
-            <img src={imageUrl} alt={imageAlt} className="sketch-1"/>
-            <a href={imageDownload}>Download</a>
-          </div> */}
-
-          
-          {/* <div className="item2">
-            <img src={imageUrl2} alt={imageAlt2} className="sketch-2"/>
-            <a href={imageDownload2}>Download</a>
-          </div>           */}
-
           <div className="item">
-            <img src="https://res.cloudinary.com/dmlnk1kus/image/upload/v1604429010/cloudinary2_pumci8.png" alt={imageAlt} className="sketch-1"/>
-            {/* <a href={imageDownload} className="download-link">Download</a> */}
-            <button onClick={this.download} className="download-link"><i class="fa fa-download"/>  Download</button>
+            <img src={imageUrl} alt={imageAlt} className="sketch-1"/>
+            <button onClick={this.download} className="download-link"><i className="fa fa-download"/>  Download</button>
           </div>
 
-          <div className="item2">
-            <img src="https://res.cloudinary.com/dmlnk1kus/image/upload/v1604429010/cloudinary2_pumci8.png" alt={imageAlt2} className="sketch-2"/>
-            {/* <a href={imageDownload2} className="download-link">Download</a> */}
-            <button onClick={this.download2} className="download-link"><i class="fa fa-download"/>  Download</button>
-          </div> 
           
+          <div className="item2">
+            <img src={imageUrl2} alt={imageAlt2} className="sketch-2"/>
+            <button onClick={this.download2} className="download-link"><i className="fa fa-download"/>  Download</button>
+          </div>          
         </section>
       </main>
     )
