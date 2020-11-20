@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Photo-Sketcher/static/css/main.f7b17bc9.chunk.css",
+    "main.js": "/Photo-Sketcher/static/js/main.7169072c.chunk.js",
+    "main.js.map": "/Photo-Sketcher/static/js/main.7169072c.chunk.js.map",
+    "runtime-main.js": "/Photo-Sketcher/static/js/runtime-main.19a79457.js",
+    "runtime-main.js.map": "/Photo-Sketcher/static/js/runtime-main.19a79457.js.map",
+    "static/js/2.1e316dd4.chunk.js": "/Photo-Sketcher/static/js/2.1e316dd4.chunk.js",
+    "static/js/2.1e316dd4.chunk.js.map": "/Photo-Sketcher/static/js/2.1e316dd4.chunk.js.map",
+    "index.html": "/Photo-Sketcher/index.html",
+    "precache-manifest.d31b4fc087b7a18b5b1caf0d5b0a534a.js": "/Photo-Sketcher/precache-manifest.d31b4fc087b7a18b5b1caf0d5b0a534a.js",
+    "service-worker.js": "/Photo-Sketcher/service-worker.js",
+    "static/css/main.f7b17bc9.chunk.css.map": "/Photo-Sketcher/static/css/main.f7b17bc9.chunk.css.map",
+    "static/js/2.1e316dd4.chunk.js.LICENSE.txt": "/Photo-Sketcher/static/js/2.1e316dd4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.19a79457.js",
+    "static/js/2.1e316dd4.chunk.js",
+    "static/css/main.f7b17bc9.chunk.css",
+    "static/js/main.7169072c.chunk.js"
+  ]
+}
