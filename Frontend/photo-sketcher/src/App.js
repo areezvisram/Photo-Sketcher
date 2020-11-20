@@ -1,6 +1,8 @@
 import React from "react";
 import './App.css'
 import Header from './components/Header'
+import loading from './images/loading.gif'
+import $ from 'jquery';
 
 class App extends React.Component {
   state = {
@@ -12,13 +14,23 @@ class App extends React.Component {
     imageDownload2: null
   }
 
-
   handleImageUpload = () => {
     
     let donwload_btns = document.getElementsByClassName("download-link");
     for(var i = 0; i < donwload_btns.length; i++) {
       donwload_btns[i].style.display = "initial";
+    }    
+
+    let donwload_btns2 = document.getElementsByClassName("download-link2");
+    for(var j = 0; j < donwload_btns2.length; j++) {
+      donwload_btns2[j].style.display = "initial";
     }
+
+    $('.loading').show();
+    $('.sketch-1').on('load', function() {
+      $('.loading').hide();
+    })
+
     const { files } = document.querySelector('input[type="file"]');
     console.log(files[0])
     const formData = new FormData();
@@ -81,7 +93,7 @@ class App extends React.Component {
           imageAlt: `An image of ${result.original_filename}`
         })
       },
-    ).open();
+    ).handleImageUpload();
   };
 
   render() {
@@ -89,9 +101,6 @@ class App extends React.Component {
 
     return (
       <main className="App">
-        {/* <a href="http://www.areezvisram.com" className="logo">
-          <img src={logo} alt=""></img>
-        </a>  */}
         <Header />
         <section className="top">        
           <form>
@@ -106,6 +115,7 @@ class App extends React.Component {
         <section className="bottom">
           <hr/>
           <p>The sketches will be displayed here:</p>
+          <img src={loading} alt="" className="loading"></img>
 
           <div className="item">
             <img src={imageUrl} alt={imageAlt} className="sketch-1"/>
@@ -115,8 +125,11 @@ class App extends React.Component {
           
           <div className="item2">
             <img src={imageUrl2} alt={imageAlt2} className="sketch-2"/>
-            <button onClick={this.download2} className="download-link"><i className="fa fa-download"/>  Download</button>
-          </div>          
+            <button onClick={this.download2} className="download-link2"><i className="fa fa-download"/>  Download</button>
+          </div>  
+
+          
+          
         </section>
       </main>
     )

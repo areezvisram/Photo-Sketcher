@@ -27,3 +27,85 @@
   .social-div {
     margin-top: -5px;
   }
+
+  @media (max-width: 1770px) {
+    .header {
+      margin-right: 85%;
+    }
+  }
+
+  @media (max-width: 1320px) {
+    .header {
+      margin-right: 80%;
+    }
+  }
+
+  @media (max-width: 1055px) {
+    .header {
+      margin-right: 77%;
+    }
+  }
+
+  @media (max-width: 880px) {
+    .header {
+      margin-right: 77%;
+    }
+
+    .logo {
+      max-width: 92%;
+      max-height: 92%;
+    }
+
+    .github {
+      height: 40px;
+      width: 40px;
+    }
+
+    .linkedin {
+      height: 40px;
+      width: 40px;
+    }
+  }
+    @media (max-width: 665px) {
+      .header {
+        margin-right: 77%;
+      }
+  
+      .logo {
+        max-width: 95%;
+        max-height: 95%;
+      }
+  
+      .github {
+        height: 40px;
+        width: 40px;
+      }
+  
+      .linkedin {
+        height: 40px;
+        width: 40px;
+      }
+  }
+
+  @media (max-width: 600px) {
+    .header {
+      margin-right: 77%;
+    }
+
+    .logo {
+      max-width: 95%;
+      max-height: 95%;
+    }
+
+    .github {
+      height: 40px;
+      width: 40px;
+    }
+
+    .linkedin {
+      height: 40px;
+      width: 40px;
+      margin-top: 15px;
+      margin-right: 45px;
+    }
+}
