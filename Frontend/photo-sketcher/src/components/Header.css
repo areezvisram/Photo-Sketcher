@@ -108,4 +108,19 @@
       margin-top: 15px;
       margin-right: 45px;
     }
+
+    
+}
+
+
+@media (max-width: 414px) {
+  .github {
+    width: 30px;
+    height: 30px;
+  }
+
+  .linkedin {
+    width: 30px;
+    height: 30px;
+  }
 }

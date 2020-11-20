@@ -15,11 +15,16 @@ html, body {
   
 }
 
+.title {
+  font-size: 2.5em;
+  text-decoration: underline;
+}
+
 .App .top {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: -30px;
   border-right: .5px solid grey;
 }
 
@@ -153,8 +158,7 @@ html, body {
   cursor: pointer;
   position: relative;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  /* display: none; */
-  display: none;
+  display: none;  
 }
 
 .download-link2 {
@@ -168,7 +172,6 @@ html, body {
   cursor: pointer;
   position: relative;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  /* display: none; */
   display: none;
 }
 
@@ -191,7 +194,19 @@ html, body {
     max-height:400px;
   }
 
-  @media (max-width: 1505px) {
+  @media (max-width: 1690px) {
+    .sketch-1{
+      max-width: 675px;
+      max-height:375px;
+    }
+    
+    .sketch-2{
+      max-width: 675px;
+      max-height:375px;
+    }
+  }
+
+  @media (max-width: 1620px) {
     .sketch-1{
       max-width: 650px;
       max-height:350px;
@@ -200,22 +215,46 @@ html, body {
     .sketch-2{
       max-width: 650px;
       max-height:350px;
+    }
+  }
+
+  @media (max-width: 1534px) {
+    .sketch-1{
+      max-width: 620px;
+      max-height:320px;
+    }
+    
+    .sketch-2{
+      max-width: 620px;
+      max-height:320px;
+    }
+  }
+
+  @media (max-width: 1428px) {
+    .sketch-1{
+      max-width: 600px;
+      max-height:300px;
+    }
+    
+    .sketch-2{
+      max-width: 600px;
+      max-height:300px;
     }
   }
 
   @media (max-width: 1360px) {
     .sketch-1{
-      max-width: 600px;
-      max-height:300px;
+      max-width: 590px;
+      max-height:290px;
     }
     
     .sketch-2{
-      max-width: 600px;
-      max-height:300px;
+      max-width: 590px;
+      max-height:290px;
     }
   }
 
-  @media (max-width: 1195px) {
+  @media (max-width: 1321px) {
     .sketch-1{
       max-width: 585px;
       max-height:285px;
@@ -227,7 +266,7 @@ html, body {
     }
   }
 
-  @media (max-width: 1160px) {
+  @media (max-width: 1300px) {
     .sketch-1{
       max-width: 565px;
       max-height:265px;
@@ -239,7 +278,7 @@ html, body {
     }
   }
 
-  @media (max-width: 1105px) {
+  @media (max-width: 1205px) {
     .sketch-1{
       max-width: 550px;
       max-height:250px;
@@ -251,7 +290,7 @@ html, body {
     }
   }
 
-  @media (max-width: 1055px) {
+  @media (max-width: 1180px) {
     .sketch-1{
       max-width: 530px;
       max-height:230px;
@@ -263,7 +302,7 @@ html, body {
     }
   }
 
-  @media (max-width: 999px) {
+  @media (max-width: 1100px) {
     .sketch-1{
       max-width: 520px;
       max-height:220px;
@@ -275,7 +314,7 @@ html, body {
     }
   }
 
-  @media (max-width: 967px) {
+  @media (max-width: 1074px) {
     .sketch-1{
       max-width: 510px;
       max-height:210px;
@@ -287,7 +326,7 @@ html, body {
     }
   }
 
-  @media (max-width: 935px) {
+  @media (max-width: 1035px) {
     .sketch-1{
       max-width: 500px;
       max-height:200px;
@@ -299,7 +338,7 @@ html, body {
     }
   }
 
-  @media (max-width: 908px) {
+  @media (max-width: 1002px) {
     .sketch-1{
       max-width: 485px;
       max-height:185px;
@@ -311,35 +350,10 @@ html, body {
     }
   }
 
-  
-  @media (max-width: 865px) {
-    .sketch-1{
-      max-width: 475px;
-      max-height:175px;
-    }
-    
-    .sketch-2{
-      max-width: 475px;
-      max-height:175px;
-    }
-  }
-
-  @media (max-width: 835px) {
-    .sketch-1{
-      max-width: 460px;
-      max-height:160px;
-    }
-    
-    .sketch-2{
-      max-width: 460px;
-      max-height:160px;
-    }
-  }
-
-  
-  @media (max-width: 780px) {
+ 
+  @media (max-width: 950px) {
     .item {
-      margin-left: 35%;
+      margin-left: 25%;
     }
 
     .download-link {
@@ -351,43 +365,47 @@ html, body {
     }
     
     .item2 {
-      margin-right: 30% !important;
+      margin-right: 22% !important;
     }
   }
 
   @media (max-width: 725px) {
     .item {
-      margin-left: 30%;
+      margin-left: 20%;
     }
     
     .item2 {
-      margin-right: 30% !important;
+      margin-right: 18% !important;
     }
   }
 
   @media (max-width: 630px) {
     .item {
-      margin-left: 25%;
+      margin-left: 18%;
     }
     
     .item2 {
-      margin-right: 30% !important;
+      margin-right: 12% !important;
     }
   }
 
   @media (max-width: 590px) {
     .item {
-      margin-left: 25%;
+      margin-left: 15%;
     }
     
     .item2 {
-      margin-right: 30% !important;
+      margin-right: 7% !important;
+    }
+
+    .title {
+      font-size: 2em;
     }
   }
 
   @media (max-width: 530px) {
     .item {
-      margin-left: 25%;
+      margin-left: 12%;
     }
     
     .download-link {
@@ -395,15 +413,26 @@ html, body {
     }
 
     .item2 {
-      margin-right: 25% !important;
+      margin-right: 2% !important;
     }
 
     .download-link2 {
-      margin-left: 25%;
+      margin-left: 0%;
     }
 
     .App .top form { 
       width: 230px;
+    }
+  }
+
+  @media (max-width: 414px) {
+    .App .top form { 
+      width: 200px;
+    }
+
+    .title {
+      font-size: 1.7em;
+      margin-top: 40px;
     }
   }
 

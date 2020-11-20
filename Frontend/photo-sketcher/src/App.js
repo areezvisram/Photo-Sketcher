@@ -16,19 +16,18 @@ class App extends React.Component {
 
   handleImageUpload = () => {
     
-    let donwload_btns = document.getElementsByClassName("download-link");
-    for(var i = 0; i < donwload_btns.length; i++) {
-      donwload_btns[i].style.display = "initial";
-    }    
-
-    let donwload_btns2 = document.getElementsByClassName("download-link2");
-    for(var j = 0; j < donwload_btns2.length; j++) {
-      donwload_btns2[j].style.display = "initial";
-    }
-
     $('.loading').show();
     $('.sketch-1').on('load', function() {
       $('.loading').hide();
+      let donwload_btns = document.getElementsByClassName("download-link");
+      for(var i = 0; i < donwload_btns.length; i++) {
+        donwload_btns[i].style.display = "initial";
+      }    
+  
+      let donwload_btns2 = document.getElementsByClassName("download-link2");
+      for(var j = 0; j < donwload_btns2.length; j++) {
+        donwload_btns2[j].style.display = "initial";
+      }
     })
 
     const { files } = document.querySelector('input[type="file"]');
@@ -102,6 +101,7 @@ class App extends React.Component {
     return (
       <main className="App">
         <Header />
+        <h1 className="title">Photo Sketcher</h1>
         <section className="top">        
           <form>
             <div className="form-group">
@@ -118,13 +118,13 @@ class App extends React.Component {
           <img src={loading} alt="" className="loading"></img>
 
           <div className="item">
-            <img src={imageUrl} alt={imageAlt} className="sketch-1"/>
+            <img src={imageUrl} alt={imageAlt} className="sketch-1"/>            
             <button onClick={this.download} className="download-link"><i className="fa fa-download"/>  Download</button>
           </div>
 
           
           <div className="item2">
-            <img src={imageUrl2} alt={imageAlt2} className="sketch-2"/>
+            <img src={imageUrl2} alt={imageAlt2} className="sketch-2"/>            
             <button onClick={this.download2} className="download-link2"><i className="fa fa-download"/>  Download</button>
           </div>  
 
