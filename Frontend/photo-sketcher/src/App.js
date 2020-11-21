@@ -81,18 +81,19 @@ class App extends React.Component {
   }
 
   openWidget = () => {
-    window.cloudinary.createUploadWidget(
-      {
-        cloudName: 'dmlnk1kus',
-        uploadPreset: 'ml_default'
-      },
-      (error, result) => {
-        this.setState({
-          imageUrl: result.info.secure_url,
-          imageAlt: `An image of ${result.original_filename}`
-        })
-      },
-    ).handleImageUpload();
+    alert("Functionality currently disabled, please upload a downloaded image!");
+    // window.cloudinary.createUploadWidget(
+    //   {
+    //     cloudName: 'dmlnk1kus',
+    //     uploadPreset: 'ml_default'
+    //   },
+    //   (error, result) => {
+    //     this.setState({
+    //       imageUrl: result.info.secure_url,
+    //       imageAlt: `An image of ${result.original_filename}`
+    //     })
+    //   },
+    // ).handleImageUpload();
   };
 
   render() {
