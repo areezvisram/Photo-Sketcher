@@ -1,5 +1,6 @@
-Backend/__pycache__
-Backend/venv
+flask-backend/__pycache__
+flask-backend/.venv
 Frontend/node_modules
-Backend/cloudinary1.png
-Backend/cloudinary2.png
+flask-backend/cloudinary1.png
+flask-backend/cloudinary2.png
+flask-backend/.dockerignore
