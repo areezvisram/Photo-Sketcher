@@ -15,17 +15,17 @@ class App extends React.Component {
   }
 
   handleImageUpload = () => {
-    
+
     $('.loading').show();
-    $('.sketch-1').on('load', function() {
+    $('.sketch-1').on('load', function () {
       $('.loading').hide();
       let donwload_btns = document.getElementsByClassName("download-link");
-      for(var i = 0; i < donwload_btns.length; i++) {
+      for (var i = 0; i < donwload_btns.length; i++) {
         donwload_btns[i].style.display = "initial";
-      }    
-  
+      }
+
       let donwload_btns2 = document.getElementsByClassName("download-link2");
-      for(var j = 0; j < donwload_btns2.length; j++) {
+      for (var j = 0; j < donwload_btns2.length; j++) {
         donwload_btns2[j].style.display = "initial";
       }
     })
@@ -40,35 +40,35 @@ class App extends React.Component {
       body: formData
     };
     return fetch('https://api.Cloudinary.com/v1_1/dmlnk1kus/image/upload', options)
-    .then(res => res.json())
-    .then(res => {
-      var data = {
-        "url": res.secure_url
-      }
-      var obj = {
-        method: 'POST',
-        headers: {
+      .then(res => res.json())
+      .then(res => {
+        var data = {
+          "url": res.secure_url
+        }
+        var obj = {
+          method: 'POST',
+          headers: {
             Accept: "application/json",
             "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    };
-      return fetch('https://av-photo-sketcher.herokuapp.com/addPhoto', obj)
-      .then(response => response.json())
-      .then(response => {
-        this.setState({
-          imageUrl: response.sketch_url,
-          imageAlt: `A sketch of ${res.original_filename}`,
-          imageDownload: response.download_url,
-          imageUrl2: response.sketch2_url,
-          imageAlt2: `A sketch of ${res.original_filename}`,
-          imageDownload2: response.download_url2
-        })
-      })
+          },
+          body: JSON.stringify(data)
+        };
+        return fetch('https://photo-sketcher-backend-64lhjd5fha-uc.a.run.app//addPhoto', obj)
+          .then(response => response.json())
+          .then(response => {
+            this.setState({
+              imageUrl: response.sketch_url,
+              imageAlt: `A sketch of ${res.original_filename}`,
+              imageDownload: response.download_url,
+              imageUrl2: response.sketch2_url,
+              imageAlt2: `A sketch of ${res.original_filename}`,
+              imageDownload2: response.download_url2
+            })
+          })
 
-    })
-    .catch(err => console.log(err));
+      })
+      .catch(err => console.log(err));
 
   }
 
@@ -103,10 +103,10 @@ class App extends React.Component {
       <main className="App">
         <Header />
         <h1 className="title">Photo Sketcher</h1>
-        <section className="top">        
+        <section className="top">
           <form>
             <div className="form-group">
-              <input type="file"/>
+              <input type="file" />
             </div>
             <button type="button" className="btn" onClick={this.handleImageUpload}>Submit</button>
             <button type="button" className="btn widget-btn" onClick={this.openWidget}>Upload Via Widget</button>
@@ -114,23 +114,23 @@ class App extends React.Component {
 
         </section>
         <section className="bottom">
-          <hr/>
+          <hr />
           <p>The sketches will be displayed here:</p>
           <img src={loading} alt="" className="loading"></img>
 
           <div className="item">
-            <img src={imageUrl} alt={imageAlt} className="sketch-1"/>            
-            <button onClick={this.download} className="download-link"><i className="fa fa-download"/>  Download</button>
+            <img src={imageUrl} alt={imageAlt} className="sketch-1" />
+            <button onClick={this.download} className="download-link"><i className="fa fa-download" />  Download</button>
           </div>
 
-          
-          <div className="item2">
-            <img src={imageUrl2} alt={imageAlt2} className="sketch-2"/>            
-            <button onClick={this.download2} className="download-link2"><i className="fa fa-download"/>  Download</button>
-          </div>  
 
-          
-          
+          <div className="item2">
+            <img src={imageUrl2} alt={imageAlt2} className="sketch-2" />
+            <button onClick={this.download2} className="download-link2"><i className="fa fa-download" />  Download</button>
+          </div>
+
+
+
         </section>
       </main>
     )
